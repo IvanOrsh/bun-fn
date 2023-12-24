@@ -2,6 +2,9 @@
   "name": "bun-fn",
   "module": "index.ts",
   "type": "module",
+  "scripts": {
+    "dev": "bun --hot ./src/index.ts"
+  },
   "devDependencies": {
     "bun-types": "latest"
   },
