@@ -1,0 +1,44 @@
+## Arrays
+
+### Data Structure
+
+In computer science, a **data structure is a way of organizing and storing data in a computer's memory in a specific format**.
+It provides a means to efficiently access, manipulate, and manage the data. Data structures can be simple or complex, depending on the requirements and the type of data being stored.
+
+Common examples of data structures include:
+
+- arrays,
+- linked lists,
+- stacks,
+- queues,
+- trees,
+- graphs,
+- and hash tables.
+
+Each data structure has its own characteristics, operations, and trade-offs, and the choice of data structure depends on the specific problem and the desired performance and functionality.
+
+### Array definition
+
+- In computer science, an array is an abstract data structure that stores a fixed-size sequence of elements of the same type.
+- It is a collection of elements, each identified by an index or a key.
+- Arrays provide efficient random access to elements based on their index, allowing for constant-time retrieval.
+- The elements in an array are typically stored in contiguous memory locations, which enables efficient traversal and manipulation.
+- Arrays can be one-dimensional (a linear sequence of elements) or multi-dimensional (a matrix-like structure).
+
+### Array common operations Big O
+
+- Static arrays
+- Dynamic arrays (in JS arrays are dynamic )
+
+1. Access - S, T = O(1)
+2. Set - T = O(n), S = O(1)
+3. Traverse / Search - T = O(n), S = O(1)
+4. Copy - S, T = O(N)
+5. Insert (S = O(1))
+   1. at beginning - T = O(n)
+   2. at end - O(n) for static, O(1) for dynamic
+   3. somewhere in between - O(n)
+6. Remove (S = O(1))
+   1. at beginning - O(n)
+   2. at end - O(1)
+   3. somewhere in between - O(n)
