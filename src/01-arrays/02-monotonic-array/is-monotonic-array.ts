@@ -11,6 +11,8 @@ export function isMonotonicArray(arr: number[]): boolean {
 
   // [3, _, _, _, -5] - can only be monotonic if it is monotone decreasing -> check, if it's non-increasing
 
+  // T = O(n), S = O(1)
+
   if (arr.length < 2) {
     return true;
   }
