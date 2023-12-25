@@ -49,3 +49,4 @@ Each data structure has its own characteristics, operations, and trade-offs, and
 2. [Monotonic Array](02-monotonic-array/question.md), [Solution](02-monotonic-array/is-monotonic-array.ts)
 3. [Rotate an Array](03-rotate-array/question.md), [Solution](03-rotate-array/rotate-array.ts)
 4. [Container with Most Water](04-container-with-most-water/question.md), [Solution](04-container-with-most-water/container-with-most-water.ts)
+5. [Max Sum Subarray](05-max-sum-subarray/question.md), [Solution](05-max-sum-subarray/max-subarray.ts)
