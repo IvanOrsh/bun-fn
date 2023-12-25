@@ -53,3 +53,4 @@ Each data structure has its own characteristics, operations, and trade-offs, and
 6. [Best Time to Buy and Sell](06-best-time-to-buy-and-sell/question.md), [Solution](06-best-time-to-buy-and-sell/max-profit.ts)
 7. [Majority Element](07-majority-element/question.md), [Solution](07-majority-element/majority-element.ts)
 8. [Move Zeroes](08-move-zeroes/question.md), [Solution](08-move-zeroes/moveZeroes.ts)
+9. [Two Sum II](09-two-sum-2-input-arr-is-sorted/question.md), [Solution](09-two-sum-2-input-arr-is-sorted/two-sum.ts)
