@@ -42,3 +42,8 @@ Each data structure has its own characteristics, operations, and trade-offs, and
    1. at beginning - O(n)
    2. at end - O(1)
    3. somewhere in between - O(n)
+
+### List of problems
+
+1. [Sorted Squared Array](01-sorted-squared-array/question.md), [Solution](01-sorted-squared-array/arr-sorted-squared.ts)
+2. [Monotonic Array](02-monotonic-array/question.md), [Solution](02-monotonic-array/is-monotonic-array.ts)
