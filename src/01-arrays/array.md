@@ -52,3 +52,4 @@ Each data structure has its own characteristics, operations, and trade-offs, and
 5. [Max Sum Subarray](05-max-sum-subarray/question.md), [Solution](05-max-sum-subarray/max-subarray.ts)
 6. [Best Time to Buy and Sell](06-best-time-to-buy-and-sell/question.md), [Solution](06-best-time-to-buy-and-sell/max-profit.ts)
 7. [Majority Element](07-majority-element/question.md), [Solution](07-majority-element/majority-element.ts)
+8. [Move Zeroes](08-move-zeroes/question.md), [Solution](08-move-zeroes/moveZeroes.ts)
