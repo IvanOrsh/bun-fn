@@ -1,4 +1,4 @@
-## Question
+## Is Monotonic
 
 An array is monotonic if it is either monotone increasing or monotone decreasing.
 An array is monotone increasing if all its elements from left to right are non-decreasing.
