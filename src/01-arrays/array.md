@@ -51,3 +51,4 @@ Each data structure has its own characteristics, operations, and trade-offs, and
 4. [Container with Most Water](04-container-with-most-water/question.md), [Solution](04-container-with-most-water/container-with-most-water.ts)
 5. [Max Sum Subarray](05-max-sum-subarray/question.md), [Solution](05-max-sum-subarray/max-subarray.ts)
 6. [Best Time to Buy and Sell](06-best-time-to-buy-and-sell/question.md), [Solution](06-best-time-to-buy-and-sell/max-profit.ts)
+7. [Majority Element](07-majority-element/question.md), [Solution](07-majority-element/majority-element.ts)
