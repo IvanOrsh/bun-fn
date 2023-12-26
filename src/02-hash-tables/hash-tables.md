@@ -70,3 +70,4 @@ Collisions can impact the performance and efficiency of hash-based data structur
 ### List of problems
 
 1. [Tow Sum](01-two-sum/question.md), [Solution](01-two-sum/two-sum.ts)
+2. [Isomorphic Strings](02-isomorphic-strings/question.md), [Solution](02-isomorphic-strings/is-isomorphic.ts)
