@@ -15,3 +15,8 @@ No two characters may map to the same character, but a character may map to itse
 Input: s = "egg", t = "add"
 Output: true
 ```
+
+```
+Input: s = "foo", t = "bar"
+Output: false
+```
