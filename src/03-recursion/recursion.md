@@ -22,3 +22,7 @@ console.log(factorial(5)); // Output: 120
 ### Use Cases
 
 Recursion can also be used to solve problems with more complex structures, such as traversing trees or finding the Fibonacci sequence. However, it's important to **ensure that recursive functions have proper termination conditions and handle base cases effectively** to prevent infinite recursion.
+
+### List of problems:
+
+1. [Fibonacci, Find the Nth number](01-find-fibo-given-n/question.md), [Solution](01-find-fibo-given-n/fibo.ts)
