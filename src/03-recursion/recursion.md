@@ -26,3 +26,4 @@ Recursion can also be used to solve problems with more complex structures, such 
 ### List of problems:
 
 1. [Fibonacci, Find the Nth number](01-find-fibo-given-n/question.md), [Solution](01-find-fibo-given-n/fibo.ts)
+2. [Power Sum](02-power-sum/question.md), [Solution](02-power-sum/power-sum.ts)
