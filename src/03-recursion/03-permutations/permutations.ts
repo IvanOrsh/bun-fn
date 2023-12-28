@@ -47,6 +47,3 @@ export function permutations(arr: number[]): number[][] {
 
   return permutations;
 }
-
-console.log(permutations([1, 2, 3]));
-console.log(permutations([1]));
