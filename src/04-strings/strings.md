@@ -51,3 +51,4 @@ Note: If we have to do multiple (many) operation on strings, we might want to co
 ### List of problems
 
 1. [First Non Repeating Character](01-first-not-repeating-char/question.md), [Solution](01-first-not-repeating-char/first-non-repeating.ts)
+2. [Is Palindrome](02-is-palindrome/question.md), [Solution](02-is-palindrome/is-palindrome.ts)
