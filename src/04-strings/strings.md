@@ -52,3 +52,4 @@ Note: If we have to do multiple (many) operation on strings, we might want to co
 
 1. [First Non Repeating Character](01-first-not-repeating-char/question.md), [Solution](01-first-not-repeating-char/first-non-repeating.ts)
 2. [Is Palindrome](02-is-palindrome/question.md), [Solution](02-is-palindrome/is-palindrome.ts)
+3. [Length of Longest Substring with Unique Characters](03-longest-substring-with-unique-chars/question.md), [Solution](03-longest-substring-with-unique-chars/longest-substring-with-unique.ts)
