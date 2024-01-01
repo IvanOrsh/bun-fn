@@ -45,3 +45,4 @@ These are just a few examples of search algorithms commonly used in various scen
 ### List of problems:
 
 1. [Binary Search: iter, rec](01-binary-search/question.md), [Solution](01-binary-search/binary-search.ts)
+2. [Search in Rotated Sorted Array](02-search-in-roteated-sorted-arr/question.md), [Solution](02-search-in-roteated-sorted-arr/search-rotated-sorted.ts)

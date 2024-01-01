@@ -1,4 +1,6 @@
 export function binarySearchIter(arr: number[], target: number): number {
+  // T = O(log n), S = O(1)
+  //==================================
   // 0 1 2 3 4 5 6 7 8, target = 2
   //         ^
   // mid = floor[  (left + right) / ] = (0 + 8) / 2 = 4
@@ -29,6 +31,7 @@ export function binarySearchIter(arr: number[], target: number): number {
 }
 
 export function binarySearchRec(arr: number[], target: number): number {
+  // T = O(log n), S = O(log n)
   const helper = (
     arr: number[],
     target: number,
