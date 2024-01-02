@@ -53,7 +53,7 @@ export function searchRotatedSorted(arr: number[], target: number): number {
         // left---- target ---- mid
         right = mid - 1;
       } else {
-        left = mid + 1; //
+        left = mid + 1;
       }
     } else {
       // else => right part is sorted
