@@ -98,14 +98,11 @@ export function searchForRangeIter(arr: number[], target: number): number[] {
       const mid = Math.floor((left + right) / 2);
 
       if (arr[mid] === target) {
-        if (mid === 0) {
-          // we have found left extreme!
-          return 0;
-        } else if (arr[mid - 1] === target) {
-          // continue calling function recursively
+        if (mid === 0) return 0;
+
+        if (arr[mid - 1] === target) {
           right = mid - 1;
         } else {
-          // we have found our left extreme!
           return mid;
         }
       } else {
@@ -128,14 +125,11 @@ export function searchForRangeIter(arr: number[], target: number): number[] {
       const mid = Math.floor((left + right) / 2);
 
       if (arr[mid] === target) {
-        if (mid === arr.length - 1) {
-          // we have found right extreme!
-          return arr.length - 1;
-        } else if (arr[mid + 1] === target) {
-          // continue calling function recursively
+        if (mid === arr.length - 1) return arr.length - 1;
+
+        if (arr[mid + 1] === target) {
           left = mid + 1;
         } else {
-          // we have found our right extreme!
           return mid;
         }
       } else {
