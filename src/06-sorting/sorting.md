@@ -32,4 +32,5 @@ These are just a few examples of sorting algorithms. There are many other algori
 
 ### List of problems:
 
-1. [Bubble Sort](01-bubble/question.md)
+1. [Bubble Sort](01-bubble/question.md), [Solution](01-bubble/bubble.ts)
+2. [Insertion Sort](02-insert/question.md), [Solution](02-insert/insert.ts)
