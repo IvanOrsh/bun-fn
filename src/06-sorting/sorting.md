@@ -37,3 +37,4 @@ These are just a few examples of sorting algorithms. There are many other algori
 3. [Selection Sort](03-select/question.md), [Solution](03-select/select.ts)
 4. [Merge Sort](04-merge/question.md), [Solution](04-merge/merge.ts)
 5. [Quick Sort](05-quick/question.md), [Solution](05-quick/quick.ts)
+6. [Radix Sort](06-radix/question.md), [Solution](06-radix/radix.ts)
