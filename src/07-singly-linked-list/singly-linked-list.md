@@ -106,3 +106,4 @@ Traverse / Search: T = O(n), S = O(1)
 ### List of problems
 
 1. [Design Singly Linked List](01-implement-singly-ll-class/question.md), [Solution](01-implement-singly-ll-class/singly-ll.ts)
+2. [Remove Duplicates](02-remove-duplicates/question.md), [Solution](02-remove-duplicates/remove-duplicates.ts)
