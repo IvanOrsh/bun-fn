@@ -9,3 +9,4 @@
 7. [Singly Linked List](src/07-singly-linked-list/singly-linked-list.md)
 8. [Doubly Linked List](src/08-doubly-linked-list/doubly-linked-list.md)
 9. [Stack](src/09-stack/stack.md)
+10. [Queue](src/10-queue/queue.md)
