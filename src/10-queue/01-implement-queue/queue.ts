@@ -60,17 +60,13 @@ export class Queue<T> {
       return undefined;
     }
 
-    if (this.head === this.tail) {
-      const res = this.head.value;
-      this.size--;
-      this.head = null;
-      this.tail = null;
-      return res;
-    }
-
     const res = this.head.value;
     this.head = this.head.next!;
     this.size--;
+
+    if (this.size === 0) {
+      this.tail = null;
+    }
     return res;
   }
 

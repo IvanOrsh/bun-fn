@@ -61,3 +61,4 @@ Size: O(1) - getting the number of elements in the queue is a constant time oper
 ### List of Problems
 
 1. [Design a Queue](01-implement-queue/question.md), [Solution](01-implement-queue/queue.ts)
+2. [Queue with Stack](02-queue-with-stack/question.md), [Solution](02-queue-with-stack/queue-with-stack.ts)
