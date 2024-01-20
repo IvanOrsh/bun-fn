@@ -10,3 +10,7 @@
 8. [Doubly Linked List](src/08-doubly-linked-list/doubly-linked-list.md)
 9. [Stack](src/09-stack/stack.md)
 10. [Queue](src/10-queue/queue.md)
+11. Binary Tree
+12. Heap & Priority Queue
+13. Graph
+14. [Regular Expressions](src/14-reg-exp/regular-expressions.md)
