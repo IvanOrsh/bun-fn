@@ -1,10 +1,12 @@
 /*
+
  |                |
  push            pop
  |                |
-| stack |   | stack |
---------     -------
- |pop ----> |push
+ |                |
+|IN stack |   |OUT stack |
+--------      -------
+ |pop ---->   |push
 */
 
 export class QueueWithStacks<T> {
