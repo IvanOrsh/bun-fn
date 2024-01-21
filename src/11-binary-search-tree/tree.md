@@ -304,6 +304,43 @@ class BinarySearchTree {
 }
 ```
 
+### Understanding BFS
+
+```txt
+
+      ->  20
+        /    \
+  ->  13  ->  40 ->
+     / \       \
+    10  13      43
+   / \          /
+  8   11       41
+
+BFS = [20, 13, 40, 10, 13, 43, 8, 11, 41]
+
+```
+
+### Understanding DFS
+
+```txt
+
+          20
+        /    \
+      13     40
+     / \       \
+    10  13      43
+   / \          /
+  8   11       41
+
+DFS:
+
+- in-order: left, current, right: 8, 10, 11, 13, 13, 20,  40, 41, 43 - IN THE ASCENDING ORDER
+- pre-order: current, left, right: 20, 13, 10, 8, 11, 13, 40, 43, 41
+- post-order: left, right, current: 8, 11, 10, 13, 13, 41, 43, 40, 20 - IN THE DESCENDING ORDER
+
+```
+
 ### List of Problems:
 
 1. [Design a Binary Search Tree](01-implement-bst/question.md), [Solution](01-implement-bst/bst.ts)
+2. [BFS, DFS](02-traverse-bfs-dfs/question.md), [Solution](02-traverse-bfs-dfs/bst.ts)

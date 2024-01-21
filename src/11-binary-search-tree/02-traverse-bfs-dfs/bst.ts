@@ -220,4 +220,161 @@ export class BinarySearchTree {
 
     return node.value;
   }
+
+  // **** TRAVERSE ****
+  // 1. BFS
+  /*
+          20
+        /    \
+      13     40
+     / \       \
+    10  13      43
+   / \          /
+  8   11       41
+
+  BFS: 20, 13, 40, 10, 13, 43, 8, 11, 41
+
+  while something in the queue:
+    const el = queue.dequeue(); // shift
+    queue.enqueue(el.left);
+    queue.enqueue(el.right);
+
+
+  queue = [20,] -> [13, 40] -> [40, 10, 13] -> [10, 13, 43]
+  array = []    -> [20]     -> [20, 13]     -> [20, 13, 40]
+  */
+  traverseBFS(): TreeNode[] {
+    // T = O(n), S = O(n) (or S = O(w), where w is the approx. size of queue at a time))
+    if (!this.root) {
+      return [];
+    }
+
+    const result: TreeNode[] = [];
+    const queue: TreeNode[] = [];
+
+    queue.push(this.root);
+
+    while (queue.length) {
+      const el = queue.shift()!;
+      result.push(el);
+
+      if (el.left) {
+        queue.push(el.left);
+      }
+
+      if (el.right) {
+        queue.push(el.right);
+      }
+    }
+
+    return result;
+  }
+
+  // 2. DFS in-order, pre-order, post-order
+  /*
+          20
+        /    \
+      13     40
+     / \       \
+    10  13      43
+   / \          /
+  8   11       41
+  
+  DFS, in-order, left current right
+  DFS, pre-order, current left right
+  DFS, post-order, left right current
+  */
+  traverseDFSinOrder(): TreeNode[] {
+    // left current right
+    if (!this.root) {
+      return [];
+    }
+
+    const result: TreeNode[] = [];
+    let current = this.root;
+
+    // recursive:
+    /*
+    function trav(node: TreeNode) {
+      if (node.left) trav(node.left);
+      result.push(node);
+
+      if (node.right) trav(node.right);
+    }
+    trav(current);
+    */
+
+    // iterative:
+
+    const stack: TreeNode[] = [];
+
+    while (current || stack.length > 0) {
+      while (current) {
+        stack.push(current);
+        current = current.left!;
+      }
+
+      current = stack.pop()!;
+      if (current) {
+        result.push(current);
+        current = current.right!;
+      }
+    }
+
+    return result;
+  }
+
+  traverseDFSpreOrder(): TreeNode[] {
+    // current left right
+    if (!this.root) {
+      return [];
+    }
+
+    const result: TreeNode[] = [];
+    let current = this.root;
+
+    // recursive:
+    /*
+    function trav(node: TreeNode) {
+      result.push(node);
+      if (node.left) trav(node.left);
+      if (node.right) trav(node.right);
+    }
+    trav(current);
+    */
+
+    // iterative:
+    const stack: TreeNode[] = [];
+    while (current || stack.length > 0) {
+      while (current) {
+        result.push(current);
+        stack.push(current);
+        current = current.left!;
+      }
+
+      current = stack.pop()!.right!;
+    }
+
+    return result;
+  }
+
+  traverseDFSpostOrder(): TreeNode[] {
+    // left right current
+    if (!this.root) {
+      return [];
+    }
+
+    const result: TreeNode[] = [];
+    let current = this.root;
+
+    function trav(node: TreeNode) {
+      if (node.left) trav(node.left);
+      if (node.right) trav(node.right);
+      result.push(node);
+    }
+
+    trav(current);
+
+    return result;
+  }
 }

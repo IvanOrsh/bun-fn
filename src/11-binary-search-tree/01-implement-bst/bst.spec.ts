@@ -4,7 +4,7 @@ import { BinarySearchTree, TreeNode } from "./bst";
 
 describe("Test BinarySearchTree", () => {
   describe("test insert", () => {
-    it("should insert to empty tree should set root", () => {
+    it("should insert to empty tree", () => {
       const tree = new BinarySearchTree();
       tree.insert(10);
       expect(tree.root?.value).toBe(10);
