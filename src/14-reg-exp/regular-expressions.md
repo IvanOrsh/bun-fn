@@ -15,9 +15,25 @@
 - [Specifying a Range in a Character Set](#specifying-a-range-in-a-character-set)
 - [Excluding a Character Set (`^`)](#excluding-a-character-set-)
 - [Shorthand for Character Sets: `\d`, `\D`, `\w`, `\W`, `\s`, `\S`](#shorthand-for-character-sets-d-d-w-w-s-s)
+- [Using Repetition in Your Patterns: `*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`](#using-repetition-in-your-patterns----n-n-nm)
+- [Greediness and Laziness in Regular Expressions](#greediness-and-laziness-in-regular-expressions)
+- [Specifying Repetition Amount](#specifying-repetition-amount)
+- [What are Anchored Expressions? (overview) `^`, `$`, `\b`](#what-are-anchored-expressions-overview---b)
+- [Matching at the Beginning and Ending](#matching-at-the-beginning-and-ending)
+- [Using the Multi-line Flag](#using-the-multi-line-flag)
+- [Working with Word Boundaries: `\b`, `\B`](#working-with-word-boundaries-b-b)
+- [Writing Accurate Regular Expressions](#writing-accurate-regular-expressions)
+- [Specifying Options: `|`](#specifying-options-)
+- [Using Grouping (`()`): overview](#using-grouping--overview)
+- [Understanding Capturing Groups](#understanding-capturing-groups)
+- [Understanding Group Backreferences](#understanding-group-backreferences)
+- [Lookahead Groups: positive lookahead `(?=...)`](#lookahead-groups-positive-lookahead-)
+- [Lookahead Groups: negative lookahead `(?!...)`](#lookahead-groups-negative-lookahead-)
 - [List of Exercises](#list-of-exercises)
   - [Exercise 1: Phone numbers with certain area code.](#exercise-1-phone-numbers-with-certain-area-code)
-  - [Exercise 2:](#exercise-2)
+  - [Exercise 2: Validate phone numbers](#exercise-2-validate-phone-numbers)
+  - [Exercise 3: Using `replace` method change the day of the week in a given string](#exercise-3-using-replace-method-change-the-day-of-the-week-in-a-given-string)
+  - [Exercise 4: Iterate through the data provided. Use a regular expression to store the names in a new array but change the order of the name so first name is listed first and last name is last.](#exercise-4-iterate-through-the-data-provided-use-a-regular-expression-to-store-the-names-in-a-new-array-but-change-the-order-of-the-name-so-first-name-is-listed-first-and-last-name-is-last)
 
 ### What are Regular Expressions?
 
@@ -391,12 +407,326 @@ console.log(pattern.test("123")); // Output: false
 5. `\s`: Matches any whitespace character (space, tab, newline). It is equivalent to the character set `[\t\n\r\f\v]`.
 6. `\S`: Matches any non-whitespace character. It is equivalent to the character set `[^\t\n\r\f\v]`.
 
+### Using Repetition in Your Patterns: `*`, `+`, `?`, `{n}`, `{n,}`, `{n,m}`
+
+These are some common **quantifiers** used to specify repetition in regex patterns:
+
+1. `*`: Matches the preceding element **zero or more times**.
+2. `+`: Matches the preceding element **one or more times**.
+3. `?`: Matches the preceding element **zero or one time (optional)**.
+4. `{n}`: Matches the preceding element exactly n times.
+5. `{n,}`: Matches the preceding element n or more times.
+6. `{n,m}`: Matches the preceding element at least n times, but no more than m times.
+
+examples:
+
+1. `\d{3,}` - This pattern matches any sequence of three or more digits.
+2. `\w+[\.,;]?` - This pattern matches one or more word characters (letters, digits, or underscores) followed by an optional punctuation character.
+
+### Greediness and Laziness in Regular Expressions
+
+- **Greedy quantifiers**: By default, quantifiers are greedy, meaning they match as much of the input as possible while still allowing the overall pattern to match. For example, the pattern `.*` will greedily match as many characters as possible.
+
+- **Lazy quantifiers**: By using a `?` after **a greedy quantifier**, it **becomes lazy**, matching as little of the input as possible while still allowing the overall pattern to match. For example, the pattern `.*?` will lazily match as few characters as possible.
+
+Say, we have the following html:
+
+`<p>This is the first paragraph.</p><p>Paragraph number two.</p>`
+
+and we want to select only the first paragraph:
+
+```js
+const pattern = /<p>.*?<\/p>/;
+```
+
+### Specifying Repetition Amount
+
+- `{min, max}` - Matches min to max occurrences
+- `{min}` - Matches min occurrences
+- `{min,}` - Matches min or more occurrences
+
+Some examples:
+
+1. #ff0000 #C0C0C0 these are hex numbers, and we want to match them:
+
+```js
+const pattern = /#[0-9A-F]{6}/gi;
+```
+
+2. Match a word that may or may not be followed by punctuation:
+
+```js
+const pattern = /\w+[\.,;]?/;
+```
+
+3. Match a social security number: `529-66-9898`
+
+```js
+const pattern = /\d{3}-\d{2}-\d{4}/;
+```
+
+4. Match a word that is between 3 and 6 characters long:
+
+```js
+const pattern = /\w{3,6}/;
+```
+
+5. Match a word that ends with "ing" and may have additional characters before it:
+
+```js
+const pattern = /\w+ing/;
+```
+
+### What are Anchored Expressions? (overview) `^`, `$`, `\b`
+
+**Anchored expressions** in regular expressions are patterns that **are matched against specific locations** within the input string. Anchors are used to specify where in the string the pattern should match.
+
+1. Matching a pattern at the beginning of a string using the `^` anchor:
+
+```js
+const pattern = /^Hello/;
+```
+
+2. Matching a pattern at the end of a string using the `$` anchor:
+
+```js
+const pattern = /world!$/;
+```
+
+3. Matching a pattern at word boundaries using the `\b` anchor:
+
+```js
+const pattern = /\bthe\b/;
+```
+
+4.  Matching a pattern that is both anchored at the beginning and the end of a string:
+
+```js
+const pattern = /^start.*end$/;
+```
+
+### Matching at the Beginning and Ending
+
+- `^` anchors the match to the **start of the line**
+- `$` anchors the match to the **end of the line**
+
+### Using the Multi-line Flag
+
+The multi-line flag (`m`) in regular expressions is used to **change the behavior of the `^` and `$` anchors to match the beginning and end of lines within the input string**, rather than just the beginning and end of the entire string.
+
+```js
+const multiLinePattern = /^start.*end$/m;
+```
+
+### Working with Word Boundaries: `\b`, `\B`
+
+- `\b`: Matches a word boundary, **pattern bounded by a non-word character**
+- `\B`: Matches a non-word boundary, **pattern bounded by a word character**
+
+- References **position** , not an actual character.
+- Word character: `\w` or `[a-zA-Z0-9_]`
+
+Some examples:
+
+1. Matching a word at the beginning of a string:
+
+```js
+const pattern = /\bhello/;
+```
+
+2. Matching a word at the end of a string:
+
+```js
+const pattern = /world\b/;
+```
+
+This pattern will match the word "world" only if it appears at the end of the input string or is followed by a non-word character.
+
+3. Matching a whole word:
+
+```js
+const pattern = /\bthe\b/;
+```
+
+This pattern will match the word "the" only if it appears as a whole word, surrounded by word boundaries.
+
+4. Using `\B` to match non-word boundaries:
+
+```js
+const pattern = /\Bis\B/;
+```
+
+This pattern will match the word "is" only if it appears surrounded by word characters on both sides, without any word boundaries.
+
+### Writing Accurate Regular Expressions
+
+- When possible, define the quantity of repeated expressions.
+- Narrow the scope of repeated expressions.
+- Provide clear starting and ending points.
+
+(and don't forget to test on multiple data sets!)
+
+### Specifying Options: `|`
+
+Options can be specified using the pipe `|` character to create a logical OR between different patterns. This allows you to match multiple options within the same part of the pattern.
+
+example:
+
+```js
+const pattern = ` /\b(mon|tue(s)?|wed(nes)?|thu(rs)?|fri|sat(ur)?|sun)(day)?\b/gi`;
+```
+
+### Using Grouping (`()`): overview
+
+**Grouping** is a feature that allows you to **treat multiple characters as a single unit**. Grouping is denoted by enclosing the characters or subpatterns within parentheses `()`.
+
+1. **Capturing groups**:
+
+   - When you enclose part of a pattern in parentheses, you create a capturing group. Capturing groups can be used to extract specific parts of the matched text or to apply quantifiers to multiple characters as a unit. Example:
+   - `/(foo)bar/`
+   - This pattern will capture the "foo" part of the input and match it against "bar".
+
+2. **Non-capturing groups**:
+
+   - If you want to use grouping for subpatterns but don't need to capture the matched text, you can use non-capturing groups. Non-capturing groups are denoted by `(?:)`. Example:
+   - `/(?:https?|ftp):\/\//`
+   - This pattern will match either "http://", "https://", or "ftp://", but the matched text won't be captured as a separate group.
+
+3. **Grouping for alternation**:
+
+   - Grouping allows you to apply alternation (logical OR) to multiple characters or subpatterns. By using the | (pipe) character inside a group, you can specify multiple options for matching. Example:
+   - `/(apples|oranges) are tasty/`
+   - This pattern will match either "apples are tasty" or "oranges are tasty".
+
+4. **Backreferences**:
+   - Capturing groups can also be referenced later in the pattern using backreferences. This allows you to match the same text that was previously captured by a capturing group. Example:
+   - `/(\w+) \1/`
+   - This pattern will match repeated words like "hello hello" or "world world".
+
+### Understanding Capturing Groups
+
+Capturing groups are a way to treat multiple characters or subpatterns as a single unit and capture the matched text for later use.
+
+example: `/^(\d{4})[-./](\d{1,2})[-./](\d{1,2})$/i`
+
+with capturing groups: `/^(\d\d\d\d)([-./])?(\d{1,2})\2\3$/i`
+
+with non-capturing groups: `^(?:\d\d\d\d)([-./])?(\d{1,2})\1\2$`
+
+1. **Extracting submatches**: When you enclose part of a pattern in parentheses, you create a capturing group, which allows you to extract and use the matched text from that specific part of the pattern.
+
+   - `/(foo)bar/`: In this pattern, (foo) is a capturing group, and it allows you to extract the "foo" part of the input and match it against "bar".
+
+2. **Accessing captured groups**: After a successful match, the captured text within each capturing group can be accessed using special variables or methods provided by the regex engine.
+
+```js
+const match = /(foo)bar/.exec("foobar");
+console.log(match[1]); // Output: "foo"
+```
+
+3. **Applying quantifiers**: Capturing groups can be used with quantifiers to apply the quantifier to multiple characters as a unit.
+
+   - `/(abc)+/`: This pattern will match one or more occurrences of "abc" as a single captured group.
+
+4. **Backreferences**: Captured groups can be referenced later in the pattern using backreferences. This allows you to match the same text that was previously captured by a capturing group.
+   - `/(\w+) \1/`: This pattern will match repeated words like "hello hello" or "world world".
+
+### Understanding Group Backreferences
+
+<h5 style="background: white; color: red; padding: 1rem;">
+IMPORTANT: BACKREFERENCES DO NOT REFERENCE THE PATTERN, THEY REFERENCE WHAT THEY ACTUALLY CAPTURED! (kinda struggling here...)
+</h5>
+
+Backreferences do not reference the pattern itself, but rather **the specific text that was captured by the corresponding capturing group earlier** in the pattern. When a backreference is used in a regex pattern, it matches the same text that was previously captured by the corresponding capturing group.
+
+**Group backreferences** are a feature that allows you to **match the same text that was previously captured by a capturing group within the same regex pattern**.
+
+1. **Referencing captured text**: After capturing a portion of the input text using a capturing group, you can refer to that captured text later in the pattern using a group backreference.
+
+   - `/(\w+) \1/`: In this pattern, `\1` is a group backreference that matches the same text as captured by the first capturing group (\w+). This pattern will match repeated words like "hello hello" or "world world".
+
+2. **Reusing captured patterns**: Group backreferences allow you to reuse captured patterns within the same regex pattern, enabling you to match repeated occurrences of the same text.
+
+3. **Enhancing pattern flexibility**: By using group backreferences, you can create more flexible and powerful regex patterns for matching specific text patterns and structures within input strings.
+
+### Lookahead Groups: positive lookahead `(?=...)`
+
+- NOT A PART OF THE RESULT
+
+**Lookahead groups**, also known as lookahead assertions, are a feature in regular expressions that allow you to define a pattern that must be followed by another pattern without including the second pattern in the match.
+
+Lookahead groups are denoted by `(?=...)` for positive lookahead and `(?!...)` for negative lookahead.
+
+**Positive lookahead `(?=...)`**: A positive lookahead asserts that the subpattern within the parentheses must be matched at that position in the input string, but it does not include the subpattern in the match.
+
+- `/foo(?=bar)/`: This pattern will match "foo" only if it is followed by "bar", but "bar" will not be included in the match.
+
+```ts
+function validPassword(password: string): boolean {
+  /*
+  1. at least 1 capital letter
+  2. at least 1 lowercase letter
+  3. at least 1 digit
+  4. at least 1 special character
+  5. at least 8 characters
+  */
+  const pattern =
+    /^(?=.{8,})(?=.*[a-z]{1,})(?=.*[A-Z]{1,})(?=.*\d{1,})(?=.*[!@#$%^&*]{1,}).*$/;
+
+  return pattern.test(password);
+}
+```
+
+### Lookahead Groups: negative lookahead `(?!...)`
+
+**Negative lookahead `(?!...)`**: A negative lookahead asserts that the subpattern within the parentheses must not be matched at that position in the input string. It is used to match an expression only if it is not followed by another specific pattern.
+
+- `/foo(?!bar)/`: This pattern will match "foo" only if it is not followed by "bar".
+
 ### List of Exercises
 
 #### Exercise 1: Phone numbers with certain area code.
 
 Using the provided array, create a second array that only includes the numbers with the 801 area code.
 
+Note: Make sure that the phone numbers are formatted correctly: (nnn-nnn-nnnn)
+
 Solution: [Phone numbers with area code](03-phone-numbers.ts)
 
-#### Exercise 2:
+#### Exercise 2: Validate phone numbers
+
+Check to see if the provided phone number matches these formats:
+
+- (nnn)-nnn-nnnn
+- nnn.nnn.nnnn
+- nnn-nnn-nnnn
+- nnnnnnnnnnn
+- (nnn)nnn-nnnn
+
+Solution: [Validate phone numbers](04-validate-phone-number.ts)
+
+#### Exercise 3: Using `replace` method change the day of the week in a given string
+
+```js
+const text1 = `Each and ever Tuesday, at the beginning of the day, we hold a staff meeting.
+At the Tuesday staff meeting, you will need to make a report on the past weeks progress, and
+you will receive assignments for the following Tuesday. Just be aware that somedays this 
+Tuesday meeting might not occur. When that happens, we will make an announcement.`;
+```
+
+Solution: [Replace day of the week](05-replace-day-of-the-week.ts)
+
+#### Exercise 4: Iterate through the data provided. Use a regular expression to store the names in a new array but change the order of the name so first name is listed first and last name is last.
+
+```js
+const data = [
+  "Jensen, Dale",
+  "Smith, Andrea",
+  "Jorgensen, Michael",
+  "Vasefi, Annika",
+  "Lopez, Luis",
+  "Crockett, Steven",
+];
+```
+
+Solution: [Change order of names](08-change-order.ts)
