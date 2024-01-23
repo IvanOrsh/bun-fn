@@ -1,29 +1,30 @@
 ## Arrays
 
-### Data Structure
+### Static Array
 
-In computer science, a **data structure is a way of organizing and storing data in a computer's memory in a specific format**.
-It provides a means to efficiently access, manipulate, and manage the data. Data structures can be simple or complex, depending on the requirements and the type of data being stored.
+#### What is a Static Array
 
-Common examples of data structures include:
+A **static array** is a fixed length container containing `n` elements **indexable** from the range `[0, n- 1]`.
 
-- arrays,
-- linked lists,
-- stacks,
-- queues,
-- trees,
-- graphs,
-- and hash tables.
+(**Indexable** - each slot/index in the array can be referenced with a number).
 
-Each data structure has its own characteristics, operations, and trade-offs, and the choice of data structure depends on the specific problem and the desired performance and functionality.
+#### When and where is a static Array used?
 
-### Array definition
+1. Storing and accessing sequential data.
+2. Temporarily storing objects.
+3. Used by IO routines as **buffers**.
+4. Lookup tables and inverse lookup tables.
+5. Can be used to return multiple values from a function.
+6. Used in dynamic programming to cache answers to subproblems.
 
-- In computer science, an array is an abstract data structure that stores a fixed-size sequence of elements of the same type.
-- It is a collection of elements, each identified by an index or a key.
-- Arrays provide efficient random access to elements based on their index, allowing for constant-time retrieval.
-- The elements in an array are typically stored in contiguous memory locations, which enables efficient traversal and manipulation.
-- Arrays can be one-dimensional (a linear sequence of elements) or multi-dimensional (a matrix-like structure).
+### Dynamic Array
+
+#### How can we implement a Dynamic Array?
+
+1. One way is to use a **static array** and expand it as needed:
+   1. Create a static array with an initial capacity.
+   2. Add elements to the underlying static array, keeping track of the number of elements.
+   3. If adding another element will exceed the capacity, then create a new static array with twice the capacity and copy the original elements into it.
 
 ### Array common operations Big O
 
