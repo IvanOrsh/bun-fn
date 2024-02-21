@@ -347,3 +347,4 @@ DFS:
 3. [Level Order Traversal (binary tree)](03-level-order-traversal/question.md), [Solution](03-level-order-traversal/level-order-traversal.ts)
 4. [Left Right View](04-left-right-view/question.md), [Solution](04-left-right-view/left-right-view.ts)
 5. [Invert Binary Tree](05-invert-binary-tree/question.md), [Solution](05-invert-binary-tree/invert-binary-tree.ts)
+6. [Diameter of a Binary Tree](06-diameter-of-binary-tree/question.md), [Solution](06-diameter-of-binary-tree/diameter-of-binary-tree.ts)
