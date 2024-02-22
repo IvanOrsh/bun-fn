@@ -349,3 +349,4 @@ DFS:
 5. [Invert Binary Tree](05-invert-binary-tree/question.md), [Solution](05-invert-binary-tree/invert-binary-tree.ts)
 6. [Diameter of a Binary Tree](06-diameter-of-binary-tree/question.md), [Solution](06-diameter-of-binary-tree/diameter-of-binary-tree.ts)
 7. [Sorted Array to BST](07-sorted-array-to-bst/question.md), [Solution](07-sorted-array-to-bst/sorted-array-to-bst.ts)
+8. [Valid BST](08-valid-bst/question.md), [Solution](08-valid-bst/valid-bst.ts)
