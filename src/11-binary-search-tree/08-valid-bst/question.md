@@ -9,3 +9,26 @@ A valid BST is defined as follows:
 - Both the left and right subtrees must also be binary search trees
 
 Will there be duplicate values in the Binary Tree? - can be, but in this case this is NOT a valid BST
+
+---
+
+```txt
+
+   1
+  / \   false
+ 2   3
+ ^
+
+   2
+  / \   false
+ 1   0
+     ^
+
+
+         10
+       /   \
+     6      30
+    / \    /  \
+   1  20  15  50
+
+```
