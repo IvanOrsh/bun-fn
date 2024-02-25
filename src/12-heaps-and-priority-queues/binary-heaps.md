@@ -41,9 +41,9 @@ example: children of element 21 (index 3) -> index(2 * 3 + 1 = 7) = 19  index(2 
 
 ```txt
 
-# of leaves = floor(N / 2) to N - 1
+indices of leaves = floor(N / 2) to N - 1
 
-# of internal nodes = 0 to floor(n / 2) - 1
+indices of internal nodes = 0 to floor(n / 2) - 1
 
 example:
 
@@ -67,4 +67,4 @@ example:
 
 ### List of Problems:
 
-1. [Construct Max Binary Heap](01-construct-max-binary-heap/question.md)
+1. [Construct Max Binary Heap](01-construct-max-binary-heap/question.md), [Solution](01-construct-max-binary-heap/max-binary-heap.ts)
