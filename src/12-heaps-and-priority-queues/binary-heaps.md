@@ -77,6 +77,15 @@ example:
   - Max priority queue - first return element with max priority
   - Min priority queue - first return element with min priority
 
+### Big O of common operations of Priority Queue
+
+| operation         | complexity                               |
+| ----------------- | ---------------------------------------- |
+| removal           | T = (log(n)), best, avg, worst, S = O(1) |
+| insertion         | T = (log(n)), best, avg, worst, S = O(1) |
+| peak at max / min | T = O(1), S = O(1)                       |
+
 ### List of Problems:
 
 1. [Construct Max Binary Heap](01-construct-max-binary-heap/question.md), [Solution](01-construct-max-binary-heap/max-binary-heap.ts)
+2. [Construct Priority Queue](02-construct-priority-queue/question.md), [Solution](02-construct-priority-queue/min-priority-queue.ts)
