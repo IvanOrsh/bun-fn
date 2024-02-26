@@ -16,7 +16,6 @@ export function changeOrder(data: string[]): string[] {
 
   return data.map((name) => {
     const match = name.match(pattern);
-    console.log(match);
     if (match) {
       return `${match[2]}, ${match[1]}`;
     }
