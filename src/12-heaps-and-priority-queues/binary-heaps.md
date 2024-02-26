@@ -65,6 +65,18 @@ example:
 | searching             | T = O(n), S = O(1)                      |
 | build heap from array | T = O(n), S = O(1)                      |
 
+### Priority Queue
+
+- A data structure where each element has a priority
+- **Generally, PQ is implemented with Heap**
+- Every node:
+  - value
+  - priority
+- We will **heapify based on priority**
+- Two types:
+  - Max priority queue - first return element with max priority
+  - Min priority queue - first return element with min priority
+
 ### List of Problems:
 
 1. [Construct Max Binary Heap](01-construct-max-binary-heap/question.md), [Solution](01-construct-max-binary-heap/max-binary-heap.ts)
