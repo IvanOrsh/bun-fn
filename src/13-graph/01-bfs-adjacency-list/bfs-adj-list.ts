@@ -8,7 +8,7 @@
   | \ |
   D-- E 
 
-  adjacency list:
+  stored as adjacency list:
   {
   'A': ['B', 'F'],
   'B': ['A', 'F', 'C'],
